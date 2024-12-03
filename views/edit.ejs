@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Dog</title>
+</head>
+<body>
+  <h1>Edit Dog</h1>
+  <form action="/dogs/<%= dog._id %>?_method=PUT" method="POST">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<%= dog.name %>">
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input type="text" id="price" name="price" value="<%= dog.price %>">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" value="<%= dog.description %>">
+    </div>
+    <button type="submit">Update Dog</button>
+  </form>
+  <a href="/dogs">Back to Dogs List</a>
+</body>
+</html>

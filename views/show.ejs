@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dogs store</title>
+</head>
+<body>
+  <h1>dog List</h1>
+  <ul>
+    <% dogs.forEach(dog => { %>
+      <li>
+        <strong><%= dog.name %></strong> - <%= dog.price %> - <%= dog.description %>
+        <a href="/dogs/<%= dog._id %>/edit">Edit</a>
+        <form action="/dogs/<%= dog._id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/dogs/new">Add a New Dogs</a>
+</body>
+</html>
